@@ -1,9 +1,12 @@
-" SECTION: Contants
 " =========================
+" SECTION: Constants
+" =========================
+"
 let s:asc = "asc"
 let s:desc = "desc"
 let s:group = "group"
 
+" =========================
 " SECTION: Main body
 " =========================
 
@@ -25,6 +28,7 @@ function! s:SortLines(type, lines)
   return systemlist(l:cmd, a:lines)
 endfunction
 
+" ========================
 " SECTION: Public API
 " ========================
 
