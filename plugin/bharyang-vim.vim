@@ -16,15 +16,19 @@ endfunction
 
 
 function! s:Bharyang(type, _firstline, _lastline)
-  let l:sorted_lines = s:SortLines(a:type, getline(a:_firstline, a:_lastline))
-  let l:total_lines = a:_lastline - a:_firstline + 1
+  if executable('bharyang')
+    let l:sorted_lines = s:SortLines(a:type, getline(a:_firstline, a:_lastline))
+    let l:total_lines = a:_lastline - a:_firstline + 1
 
-  execute "normal! ". l:total_lines ."dd"
+    execute "normal! ". l:total_lines ."dd"
 
-  call append(a:firstline - 1, l:sorted_lines)
+    call append(a:firstline - 1, l:sorted_lines)
+  else
+    echoe "bharyang-cli is not installed."
+  endif
 endfunction
 
 function! s:SortLines(type, lines)
-  let l:cmd = "/Users/squgeim/.nvm/versions/node/v8.4.0/bin/bharyang --" . a:type
+  let l:cmd = join(["bharyang", " --" , a:type], '')
   return systemlist(l:cmd, a:lines)
 endfunction
