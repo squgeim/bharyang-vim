@@ -1,28 +1,20 @@
+" SECTION: Contants
+" =========================
 let s:asc = "asc"
 let s:desc = "desc"
 let s:group = "group"
 
-function! BharyangGroup() range
-  call s:Bharyang(s:group, a:firstline, a:lastline)
-endfunction
+" SECTION: Main body
+" =========================
 
-function! BharyangAsc() range
-  call s:Bharyang(s:asc, a:firstline, a:lastline)
-endfunction
-
-function! BharyangDesc() range
-  call s:Bharyang(s:desc, a:firstline, a:lastline)
-endfunction
-
-
-function! s:Bharyang(type, _firstline, _lastline)
+function! s:Bharyang(type) range
   if executable('bharyang')
-    let l:sorted_lines = s:SortLines(a:type, getline(a:_firstline, a:_lastline))
-    let l:total_lines = a:_lastline - a:_firstline + 1
+    let l:sortedlines = s:SortLines(a:type, getline(a:firstline, a:lastline))
+    let l:totallines = a:lastline - a:firstline + 1
 
-    execute "normal! ". l:total_lines ."dd"
+    execute "normal! ". l:totallines ."dd"
 
-    call append(a:firstline - 1, l:sorted_lines)
+    call append(a:firstline - 1, l:sortedlines)
   else
     echoe "bharyang-cli is not installed."
   endif
@@ -32,3 +24,11 @@ function! s:SortLines(type, lines)
   let l:cmd = join(["bharyang", " --" , a:type], '')
   return systemlist(l:cmd, a:lines)
 endfunction
+
+" SECTION: Public API
+" ========================
+
+command! -range BharyangAsc <line1>,<line2>call s:Bharyang(s:asc)
+command! -range BharyangDesc <line1>,<line2>call s:Bharyang(s:desc)
+command! -range BharyangGroup <line1>,<line2>call s:Bharyang(s:group)
+
