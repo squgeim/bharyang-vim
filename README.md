@@ -13,6 +13,11 @@ bharyang-vim depends on [bharyang-cli](https://github.com/squgeim/bharyang-cli).
 Plug 'squgeim/bharyang-vim', { 'do': 'npm install -g bharyang-cli', 'for': ['javascript'] } 
 ```
 
+For manual installations, install `bharyang-cli` from `npm`:
+```sh
+npm install -g bharyang-cli
+```
+
 ## Usage
 
 Select the import lines in visual mode. Use any of the following commands:
