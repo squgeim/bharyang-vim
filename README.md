@@ -3,7 +3,7 @@ Plugin to sort imports in javascript project for vim/neovim
 
 ## Install
 
-### Install bharyang-cli from npm:
+### Install [bharyang-cli](https://github.com/squgeim/bharyang-cli) from npm:
 
 ```sh
 npm install -g bharyang-cli
@@ -31,4 +31,4 @@ BharyangDesc
 
 ## Contribution
 
-The code is quite straight forward, bharyang does all of the heavy lifting. Pull requests are always welcome.
+The code is quite straight forward, [bharyang](https://github.com/squgeim/bharyang-cli) does all of the heavy lifting. Pull requests are always welcome.
