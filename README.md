@@ -1,20 +1,21 @@
 # bharyang-vim
-Plugin to sort imports in javascript project for vim/neovim
+Plugin to sort imports in a JavaScript project for Vim/NeoVim
 
-## Install
+## Installation
 
-### Install [bharyang-cli](https://github.com/squgeim/bharyang-cli) from npm:
+bharyang-vim depends on [bharyang-cli](https://github.com/squgeim/bharyang-cli).
+
+### Installation with [vim-plug](https://github.com/junegunn/vim-plug)
+
+[vim-plug](https://github.com/junegunn/vim-plug) can install [bharyang-cli](https://github.com/squgeim/bharyang-cli) as a post-install hook, and lazy load this plugin for JavaScript projects.
 
 ```sh
-npm install -g bharyang-cli
+Plug 'squgeim/bharyang-vim', { 'do': 'npm install -g bharyang-cli', 'for': ['javascript'] } 
 ```
 
-### Install from vim-plug
-
-More info on vim-plug [here](https://github.com/junegunn/vim-plug).
-
+For manual installations, install `bharyang-cli` from `npm`:
 ```sh
-Plug 'squgeim/bharyang-vim'
+npm install -g bharyang-cli
 ```
 
 ## Usage
@@ -31,4 +32,4 @@ BharyangDesc
 
 ## Contribution
 
-The code is quite straight forward, [bharyang](https://github.com/squgeim/bharyang-cli) does all of the heavy lifting. Pull requests are always welcome.
+The code is quite straight forward, [bharyang-cli](https://github.com/squgeim/bharyang-cli) does all of the heavy lifting. Pull requests are always welcome.
