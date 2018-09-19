@@ -1,4 +1,9 @@
 " =========================
+" SECTION: Globals
+" =========================
+let g:bharyang_default_sort_type = "asc"
+
+" =========================
 " SECTION: Constants
 " =========================
 "
@@ -32,6 +37,7 @@ endfunction
 " SECTION: Public API
 " ========================
 
+command! -range Bharyang <line1>,<line2>call s:Bharyang(g:bharyang_default_sort_type)
 command! -range BharyangAsc <line1>,<line2>call s:Bharyang(s:asc)
 command! -range BharyangDesc <line1>,<line2>call s:Bharyang(s:desc)
 command! -range BharyangGroup <line1>,<line2>call s:Bharyang(s:group)
