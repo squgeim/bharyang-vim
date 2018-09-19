@@ -23,9 +23,14 @@ npm install -g bharyang-cli
 Select the import lines in visual mode. Use any of the following commands:
 
 ```
-BharyangGroup
+Bharyang
 BharyangAsc
 BharyangDesc
+BharyangGroup
+```
+The `Bharyang` command uses a configuration value to determine whether the sort should be ascending ("asc") or descending ("desc"). It is ascending by default. Configure it using:
+```vim
+let g:bharyang_default_sort_type="desc"
 ```
 
 <img src="https://media.giphy.com/media/PR88YW3eX7Y4Rr6fkZ/giphy.gif" />
