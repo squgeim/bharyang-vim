@@ -28,7 +28,7 @@ BharyangAsc
 BharyangDesc
 BharyangGroup
 ```
-The `Bharyang` command uses a configuration value to determine whether the sort should be ascending ("asc") or descending ("desc"). It is ascending by default. Configure it using:
+The `Bharyang` command uses a configuration value to determine default sort type. The value can be one of `asc`, `desc` or `group`. For example, to set it to `desc`:
 ```vim
 let g:bharyang_default_sort_type="desc"
 ```
